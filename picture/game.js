@@ -6,9 +6,9 @@ var enemyImage;
 var backgroundImage;
 
 function preload() {
-  playerImage = loadImage("N5uCbDu.png");
-  enemyImage = loadImage("OdL0XPt.png");
-  backgroundImage = loadImage("aKQOg3G.png");
+  playerImage = loadImage("Webp.net-resizeimage (2).png");
+  enemyImage = loadImage("Webp.net-resizeimage (3).png");
+  backgroundImage = loadImage("cavalierscourt.jpg");
 }
 
 function setup() {

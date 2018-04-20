@@ -47,6 +47,42 @@ function loadNews() {
   news.text("fetching news...");
 }
 
-loadDate();
-loadWeather();
-loadNews();
+function loadshoes() {
+  var shoes = $("#shoes");
+  var url = "https://shoe-catalogue-api-codex.herokuapp.com/api/shoes";
+
+  $.getJSON(url, function(data) {
+    drawTable(data);
+  });
+
+function drawTable(data) {
+  
+    $("#shoes").append("<table>")
+    $("#shoes").append($("<tr> <th>Brand</th> <th>Color</th> <th>Size</th> <th>Price</th> <th>in stock </th> </tr>"));
+    
+    var rows = [];
+
+    for (var i = 0; i < data.length; i++) {
+        rows.push(drawRow(data[i]));
+    }
+ 
+    $("#shoes").append(rows);
+    $("#shoes").append("</table");
+}
+
+function drawRow(rowData) {
+    var row = $("<tr />")
+    row.append($("<td>" + rowData.brand + "</td>")); 
+    row.append($("<td>" + rowData.color + "</td>"));
+    row.append($("<td>" + rowData.size + "</td>"));
+    row.append($("<td>" + rowData.price + "</td>"));
+    row.append($("<td>" + rowData.in_stock + "</td>"));
+    
+    return row;
+}
+}
+
+// loadDate();
+// loadWeather();
+// loadNews();
+loadshoes();

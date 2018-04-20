@@ -28,7 +28,7 @@ function setup() {
         groundSprites.add(groundSprite);
     }
     
-    player = createSprite(100, height-75, 50, 50);
+    player = createSprite(100, height-75, 25, 25);
     
     obstacleSprites = new Group();
 }
